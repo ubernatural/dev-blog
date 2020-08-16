@@ -14,19 +14,19 @@ We had 80 hours budgeted to complete the Workflow, and there were two developers
 - How will we test this when it's finished, since the number of paths through the Workflow is so large?
   
 ## Our Solution
-Our solution was to break the Workflow into manageable sub-components, no different than factoring a massive function into smaller, more manageable ones. Each sub-component became its own Workflow which was called from a master orchestration Workflow. The orchestration Workflow was responsible for controlling the flow and communicating error messages back to the user.
+Our solution was to break the Workflow into sub-components, no different than factoring a massive function into smaller, more manageable ones. Each sub-component became its own Workflow which was called from a master orchestration Workflow. The orchestration Workflow was responsible for controlling the flow and communicating error messages back to the user.
   
-Some sub-Workflows included some user interaction, such as prompting for an address and zooming the map to the location. Other sub-Workflows were server-side, and others were just client-side Workflows that handled a specific task. In all cases the sub-Workflows were passed a limited set of input arguments and returned one or two outputs.
+Some sub-Workflows included user interaction, such as prompting for an address and zooming the map to the location. Other sub-Workflows were server-side, and others were just client-side Workflows that handled a specific task. In all cases the sub-Workflows were passed a limited set of input arguments and returned one or two outputs.
   
 ## Limiting Context
-It was important that we did not make the sub-Workflows reliant on the entire context of the orchestration Workflow. The reason is that we needed to be able to work on different sub-Workflows independent of each other. By defining a rigid contract for each of the sub-Workflows we could work on them in isolation. In fact, using this pattern we wrote all of the sub-Workflows before even starting on the main orchestration Workflow. We just needed to ensure that the sub-Workflows we wrote satisfied the API contract that was designed when the original Workflow wasa broken down into its constituent parts.
+It was important that we did not make the sub-Workflows reliant on the entire context of the orchestration Workflow. The reason is that we needed to be able to work on different sub-Workflows independent of each other. By defining a rigid contract for each of the sub-Workflows we could work on them in isolation. In fact, using this pattern we wrote all of the sub-Workflows before even starting on the main orchestration Workflow. We just needed to ensure that the sub-Workflows we wrote satisfied the API contract that was designed when the original Workflow was broken down into its constituent parts.
   
-Testing was significantly easier using this approach. For each sub-Workflow we wrote a 'test harness' or 'invoker' Workflow, usually a simple Form that we used to supply just the inputs that the sub-Workflow needed. This allowed us to quickly change the inputs to test multiple scenarios and inspect the output (usually just written to a Text element in the Form itself). Being able to test individual components independently without running through the entire master Workflow was a huge time saver.
+Testing was significantly easier using this approach. For each sub-Workflow we wrote a 'test harness' or 'invoker' Workflow, usually a simple `Display Form` that we used to supply just the inputs that the sub-Workflow needed. This allowed us to quickly change the inputs to test multiple scenarios and inspect the output (usually just written to a `Text` element in the `Display Form` itself). Being able to test individual components independently without running through the entire master Workflow was a huge time saver.
   
 ## Result
 We ended up writing 11 Workflows - the main orchestration Workflow plus 10 other sub-Workflows. To keep track of all of these Workflows we used the following naming convention:  
-`CLIENT - WORKFLOW_NAME - SUBROUTINE`  
-We managed the Workflow items in the Latitude AGOL organization, creating an AGOL group to hold everything together. When it came time to deploy to the client's organization we just dropped the `CLIENT` part of the name and kept the rest.
+`CLIENT - Workflow Name - Subroutine Name`  
+We managed the Workflow items in the Latitude ArcGIS Online organization, creating an AGOL group to hold everything together. When it came time to deploy to the client's organization we dropped the `CLIENT` part of the name and kept the rest.
   
 Supporting the Workflow we wrote two simple custom Workflow activities (both client-side), one GXR report template, one 'scratch' polygon layer in AGOL, and one Web Map to support the report. This was deployed in a GVH site, but there is very little code that's GVH-specific so it can be ported to GXW in the future without much difficulty (save for an Essentials Feature Map we had to use).
 
@@ -35,7 +35,7 @@ We hit the 80 hour budget target for development of the Workflow though we overr
 ## Tips
 We learned a few things along the way that we'd like to share.  
 ### Supply sub-Workflow URLs to the Orchestration Workflow as Arguments
-You invoke a sub-Workflow using the `Run Workflow` activity, which takes a URL of the Workflow you want to run. If you hard-code this URL in the `Run Workflow` activity it will be difficult to modify when you deploy to the client environment (among other times that the URL to your Workflow changes).
+You invoke a sub-Workflow using the `Run Workflow` activity, which takes a URL of the Workflow you want to run. If you hard-code this URL in the `Run Workflow` activity it will be difficult to modify when you deploy to the client environment (as well as all the other times that the URL of your Workflow changes).
 ### Enclose All Run Workflow Activities in Try/Catch
 You typically want your orchestration Workflow to be the only one responsible for displaying error messages to the user. When something goes wrong in a sub-Workflow the orchestration Workflow often needs to clean up markup and other things before exiting (if the error is non-recoverable).
 ### Understand Where and How Workflows are Stored
