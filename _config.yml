@@ -28,7 +28,7 @@ twitter_username: ubernatural
 github_username:  ubernatural
 
 # Build settings
-theme: jekyll-theme-midnight
+theme: minima
 plugins:
   - jekyll-feed
 
