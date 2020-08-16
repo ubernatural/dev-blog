@@ -4,7 +4,7 @@ title:  "Converting a Complex v4 Workflow to GXWF"
 date:   2020-08-16 14:19:00 -0700
 categories: workflow
 ---
-# Converting a Complex v4 Workflow to GXWF
+
 We (Services) recently converted a very complex Essentials (v4) Workflow into 5-Series (GXWF). *Converted* isn't really the best word to use because there was nothing that could be reused, so it's better to say it was re-written. This will be the case for pretty much all v4 Workflow conversions because the underlying technology is different.
   
 To get a sense of the complexity of the original Workflow, the client had 4 other Workflows in their site. These were average complexity, nothing special. The file sizes of these other Workflows varied between about 25kb to 52kb. The Workflow we re-wrote was ~740kb. So, 15-20 (or more) times larger than an average, 'basic' Workflow.
