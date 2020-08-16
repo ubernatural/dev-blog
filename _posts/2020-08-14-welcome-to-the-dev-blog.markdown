@@ -6,10 +6,10 @@ categories: geocortex
 ---
 This is the first post in the Geocortex dev blog. This blog is hosted in GitHub Pages, and uses Jekyll as its templating engine. Write a [markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github) file and it is converted into a blog post automatically when committed to the repository.
 
-The content below is the default post with instructions that is created when a new Jekyll site is built. It is helpful for understanding how to write new posts for this blog.
+The content below is the default post with instructions that is created when a new Jekyll site is built. It is helpful for understanding how to write new posts for this blog; just know though that you do not need to run Jekyll locally since GitHub will automatically convert the markdown pages on commit. Jekyll is useful if you want to preview your post before publishing.
 
 ---
-<br>   
+<br>
 
 > You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 > 
