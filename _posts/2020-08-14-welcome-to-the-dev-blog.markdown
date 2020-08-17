@@ -3,6 +3,7 @@ layout: post
 title:  "Welcome to the Geocortex Dev Blog!"
 date:   2020-08-14 15:56:35 -0700
 categories: general
+comments_id: 1
 ---
 This is the first post in the Geocortex dev blog. This blog is hosted in GitHub Pages, and uses Jekyll as its templating engine. Write a [markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github) file and it is converted into a blog post automatically when committed to the repository.
 

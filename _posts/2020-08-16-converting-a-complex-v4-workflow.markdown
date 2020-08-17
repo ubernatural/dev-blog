@@ -3,6 +3,7 @@ layout: post
 title:  "Converting a Complex v4 Workflow to GXWF"
 date:   2020-08-16 14:19:00 -0700
 categories: workflow
+comments_id: 2
 ---
 
 We (Services) recently converted a very complex Essentials (v4) Workflow into 5-Series (GXWF). *Converted* isn't really the best word to use because there was nothing that could be reused, so it's better to say it was re-written. This will be the case for pretty much all v4 Workflow conversions because the underlying technology is different.
