@@ -13,8 +13,6 @@ All portal items have metadata that can be retrieved using a portal REST API cal
   
 Certain portal items, such as Web Mapping Applications (which is what Workflows are stored as), also have the ability to store text or binary data alongside. This is referred to as the `itemData`, and is where GXWF stores the actual configured Workflows themselves. These are stored as JSON objects and can be easily inspected using a tool like [ago-assistant](https://ago-assistant.esri.com/) or by making a REST call to retrieve the `itemData` directly in a browser or with Postman.
   
-![]({{ site.baseurl }}/assets/images/WorkflowFileList.png)
-  
 The actual Workflow itself - all of the activities, their inputs, and the logic stringing them together are stored as a JSON object in the portal item's `itemData`.
   
 When you export a Workflow using Workflow designer, it downloads a JSON file to your computer. This JSON file is identical to the content of the `itemData` that you can see in ago-assistant. Note that the portal item content (name, description, etc.) is **not** included as part of the JSON file you export.
@@ -26,6 +24,8 @@ You can't create a server Workflow with the SaaS designer (at apps.geocortex.com
   
 The Workflows are stored (typically) in `C:\ProgramData\Geocortex\Workflow\Workflows`. The Workflows are named based on the ID of the portal item that points to them. They also have a numeric suffix that increments each time the Workflow is saved in designer. It keeps a record of all versions of the Workflow that have been saved - designer doesn't yet do anything with this but conceivably in the future it could support something like 'roll back to previous version'. In the meantime, if you have access to the Workflows directory you can grab any older version you'd like and revert manually (Don't know how? Ask me!).
 
+![]({{ site.baseurl }}/assets/images/WorkflowFileList.png)
+  
 If you look at the `itemData` for a server Workflow in ago-assistant, you will see that there actually is a Workflow there. What the heck? I just said that server Workflows are stored on the Workflow server, not in portal! The Workflow you see in `itemData` here is the pointer - if you were to open it in Designer you'd see that it just collects all of the inputs supplied to it, and invokes your actual server Workflow with a `RunWorkflow` activity.
   
 `RunWorkflow` is special in that it first retrieves the portal item (the metadata) to see if the Workflow is client or server. If it's server, it doesn't bother retrieving the `itemData` at all, and just makes a direct REST call out to the Workflow server. Technically you could have a server Workflow, **delete** the `itemData`, and still be able to execute the server Workflow using a `RunWorkflow` activity.
