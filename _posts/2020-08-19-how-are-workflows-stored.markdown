@@ -13,7 +13,7 @@ All portal items have metadata that can be retrieved using a portal REST API cal
   
 Certain portal items, such as Web Mapping Applications (which is what Workflows are stored as), also have the ability to store text or binary data alongside. This is referred to as the `itemData`, and is where GXWF stores the actual configured Workflows themselves. These are stored as JSON objects and can be easily inspected using a tool like [ago-assistant](https://ago-assistant.esri.com/) or by making a REST call to retrieve the `itemData` directly in a browser or with Postman.
   
-![](assets/images/WorkflowFileList.png)
+![]({{ site.url }}/assets/images/WorkflowFileList.png)
   
 The actual Workflow itself - all of the activities, their inputs, and the logic stringing them together are stored as a JSON object in the portal item's `itemData`.
   
