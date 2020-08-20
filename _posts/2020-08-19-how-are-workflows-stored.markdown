@@ -3,6 +3,7 @@ layout: post
 title:  "How are Workflows Stored?"
 date:   2020-08-19 20:56:35 -0700
 categories: workflow
+comments_id: 3
 ---
 This post attempts to illuminate the methods that Geocortex Workflow (GXWF) Designer uses to store its Workflows, where URLs to on-prem GXWF servers and other things like custom GXWF activity packs are configured, and how to manually update these when the need arises. Buckle up!
   
