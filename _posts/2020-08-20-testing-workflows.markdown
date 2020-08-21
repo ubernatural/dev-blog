@@ -26,7 +26,7 @@ Here is the form as it initially displays. I put it in a modal just because I di
 ![]({{ site.baseurl }}/assets/images/TestRunnerForm.png)
 
 ### The Results
-When you click `Test Workflow`, the event handler will invoke the sub-Workflow with the inputs, and write out the outputs as JSON at the bottom of the form.
+When you click `Test Workflow`, the event handler will invoke the sub-Workflow with the inputs, and write out the outputs as JSON at the bottom of the form. Note that the outputs of the `RunWorkflow` are of course also visible in the browser console if you prefer to look there (which can be good for more complex outputs).
 
 ![]({{ site.baseurl }}/assets/images/TestResultsGood.png)
 
@@ -35,4 +35,4 @@ It becomes really obvious when you have cases that you haven't covered, such as 
 
 ![]({{ site.baseurl }}/assets/images/TestResultsBad.png)
 
-One of the most commpelling things for me about this type of solution is that it opens the door for more automated tests of sub-Workflows. Instead of manually typing in different inputs, we could feed this Test Runner a JSON configuration file with arrays of inputs and expected outputs, and have the Test Runner loop through all of them quickly and show a total summary. Adding new cases would be simple, and re-running all the tests for regressions would be also very simple. An automated Test Runner solution may be a blog post for a future time, who knows?
+One of the most compelling things for me about this type of solution is that it opens the door for more automated tests of sub-Workflows. Instead of manually typing in different inputs, we could feed this Test Runner a JSON configuration file with arrays of inputs and expected outputs, and have the Test Runner loop through all of them quickly and show a total summary. Adding new cases would be simple, and re-running all the tests for regressions would be also very simple. An automated Test Runner solution may be a blog post for a future time, who knows?
