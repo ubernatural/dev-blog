@@ -31,7 +31,7 @@ If you look at the `itemData` for a server Workflow in ago-assistant, you will s
   
 `RunWorkflow` is special in that it first retrieves the portal item (the metadata) to see if the Workflow is client or server. If it's server, it doesn't bother retrieving the `itemData` at all, and just makes a direct REST call out to the Workflow server. Technically you could have a server Workflow, **delete** the `itemData`, and still be able to execute the server Workflow using a `RunWorkflow` activity.
   
-So, why is the 'poiniter' Workflow needed at all? Couldn't the execution engine in the Workflow clients handle that directly? Not sure, but my guess is that it made things a lot cleaner to centralize that server interaction code (with polling due to async execution) in one spot. I'll edit this post if that turns out to be not correct!
+So, why is the 'pointer' Workflow needed at all? Couldn't the execution engine in the Workflow clients handle that directly? Not sure, but my guess is that it made things a lot cleaner to centralize that server interaction code (with polling due to async execution) in one spot. I'll edit this post if that turns out to be not correct!
   
 ### You Have the Power
 With this knowledge of how Workflows are stored, you can do things like the following:
