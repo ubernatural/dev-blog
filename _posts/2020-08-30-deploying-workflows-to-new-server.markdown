@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Deploying Workflows to a New Server"
-date:   2020-08-27 08:00:00 -0700
+date:   2020-08-30 08:00:00 -0700
 categories: workflow
 comments_id: 5
 ---
@@ -21,16 +21,16 @@ I'll start with a simple case - a client-side Workflow with no custom activities
 - Open up the Workflow in the target designer to automatically update the license URL
 
 ### Export the Workflow
-First, exporting the Workflow is done in one of a couple of ways. You can use the Export option in Workflow designer:
+You can export the Workflow in a couple of ways. You can use the Export option in Workflow designer:
 ![]({{ site.baseurl }}/assets/images/ExportWorkflow.png)
-or you can use ago-assistant to copy the item data instead. The two methods will give you the same result, but the ago-assistant method will format your JSON for you automatically which can be nice sometimes.
+or you can use ago-assistant to copy the item data instead. The two methods will give you the same result, but the ago-assistant method will format your JSON for you automatically which is nice.
 
-The Workflow export method gives you a JSON file that you download - you will need to open that JSON file in a text editor and copy all the content to your clipboard. The ago-assistant method isn't used as much but is handy. First, launch [ago-assistant](https://ago-assistant.esri.com) and log in to your portal where the source Workflow lives.
+The Workflow export method gives you a JSON file that you download - you will need to open that JSON file in a text editor and copy all the content to your clipboard. The ago-assistant method isn't as common but it's handy. First, launch [ago-assistant](https://ago-assistant.esri.com) and log in to your portal where the source Workflow lives.
 ![]({{ site.baseurl }}/assets/images/ago-assistant.png)
 Then, choose `View an item's JSON` from the 'I want to...' menu (I like that 'I want to...' menu idea, wonder where they came up with that? :)
 ![]({{ site.baseurl }}/assets/images/ViewJson.png)
 Find the Workflow in the left-hand panel and click on it. If you have lots of items you can use the search bar.
-![]({{ site.baseurl }}/assets/images/ItemDetails.png)
+![]({{ '/assets/images/ItemDetails.png' | relative_url }})
 Scroll down to the `Data` section in the right panel and click `Copy JSON`
 ![]({{ site.baseurl }}/assets/images/CopyJson.png)
 
