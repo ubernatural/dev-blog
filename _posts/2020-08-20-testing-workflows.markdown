@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Testing Workflows"
-date:   2020-08-20 21:13:35 -0700
+date:   2020-08-20 08:00:00 -0700
 categories: workflow
 comments_id: 4
 ---
@@ -18,21 +18,21 @@ You can open up those Workflows referenced above to get a good idea of how this 
 ### Launching the Test
 Here is the Test Runner configured as a tool on a new 'Test' tab.  
 
-![]({{ site.baseurl }}/assets/images/LaunchTestRunner.png)
+![]({{ '/assets/images/LaunchTestRunner.png' | relative_url }})
 
 ### The Test Runner Form
 Here is the form as it initially displays. I put it in a modal just because I didn't want to bother with the narrow side panel view. It is pre-configured with some valid sample values that can be changed to test other scenarios.  
 
-![]({{ site.baseurl }}/assets/images/TestRunnerForm.png)
+![]({{ '/assets/images/TestRunnerForm.png' | relative_url }})
 
 ### The Results
 When you click `Test Workflow`, the event handler will invoke the sub-Workflow with the inputs, and write out the outputs as JSON at the bottom of the form. Note that the outputs of the `RunWorkflow` are of course also visible in the browser console if you prefer to look there (which can be good for more complex outputs).
 
-![]({{ site.baseurl }}/assets/images/TestResultsGood.png)
+![]({{ '/assets/images/TestResultsGood.png' | relative_url }})
 
 ### Exposing Errors
 It becomes really obvious when you have cases that you haven't covered, such as when a layer is not found.
 
-![]({{ site.baseurl }}/assets/images/TestResultsBad.png)
+![]({{ '/assets/images/TestResultsBad.png' | relative_url }})
 
 One of the most compelling things for me about this type of solution is that it opens the door for more automated tests of sub-Workflows. Instead of manually typing in different inputs, we could feed this Test Runner a JSON configuration file with arrays of inputs and expected outputs, and have the Test Runner loop through all of them quickly and show a total summary. Adding new cases would be simple, and re-running all the tests for regressions would be also very simple. An automated Test Runner solution may be a blog post for a future time, who knows?

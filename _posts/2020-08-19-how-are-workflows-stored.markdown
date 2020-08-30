@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How are Workflows Stored?"
-date:   2020-08-19 20:56:35 -0700
+date:   2020-08-19 08:00:00 -0700
 categories: workflow
 comments_id: 3
 ---
@@ -36,7 +36,7 @@ So, why is the 'pointer' Workflow needed at all? Couldn't the execution engine i
 ### You Have the Power
 With this knowledge of how Workflows are stored, you can do things like the following:
 - Export a Workflow without needing to have access to Workflow designer by copying the `itemData` using ago-assistant
-- Update a Workflow from a dev server to another server (test, prod) without changing the Workflow's URL by coping the `itemData` from one to the other. The export/import dance works well too, but it'll always import the Workflow as a copy, not overwriting the target while keeping the URL the same.
+- Update a Workflow from a dev server to another server (test, prod) without changing the Workflow's URL by coping the `itemData` from one to the other. The export/import dance works well too, but it'll always import the Workflow as a copy, not overwriting the target while keeping the URL the same. (_edit: there's now a detailed post on that [here]({{ '/2020/08/30/deploying-workflows-to-new-server/' | relative_url }})_)
     - This requires that you manually edit the Workflow license URL, or at least open and save the target Workflow in designer once it's copied over (this automatically resets the license URL)
     - You may have to edit other URLs such as to custom activity packs, other `RunWorkflow` activities, but you'd have to do that anyway.
 
