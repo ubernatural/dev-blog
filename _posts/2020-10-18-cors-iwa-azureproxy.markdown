@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CORS, IWA, and the Azure App Proxy"
+title:  "CORS, IWA, and the Azure AD App Proxy"
 date:   2020-10-18 08:00:00 -0700
 category: general
 tags: troubleshooting network azure iwa cors proxy
