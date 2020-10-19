@@ -61,7 +61,7 @@ You will now be in edit mode in ago-assistant. Here you can directly edit the JS
 ### Update the License
 If you look right at the bottom of the Workflow's item data JSON you will notice a license info section. When you use GXWF Designer this section is automatically kept up to date. In the case of on-prem Workflow, the license info section will have the URL of the on-prem Designer's license endpoint. If you've migrated the Workflow to a new server this license URL will be incorrect. This could cause problems for end users of your Workflows who may see a 'you need to license Workflow!' message. Unpleasant.
 
-There is a very easy solution to this - open GXWF Designer on the target server and save. You don't need to make any changes, just `Ctrl-S` will do. GXWF will automatically update the license information in the Workflow and you're good to go.
+There is a very easy solution to this - open the Workflow in GXWF Designer on the target server and save. You don't need to make any changes, just `Ctrl-S` will do. GXWF will automatically update the license information in the Workflow and you're good to go.
 
 Here is a screenshot of the license info for my on-prem Workflow. If you use SaaS Workflow your license will just be a string id.
 
