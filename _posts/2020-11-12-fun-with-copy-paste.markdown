@@ -5,7 +5,7 @@ date:   2020-11-12 08:00:00 -0700
 categories: development
 comments_id: 7
 ---
-Here is something that you've likely run into if you have been programming for a long time. It falls into the category of 'exceptionally difficult to troubleshoot' and so you should always be aware (and reminded) of it. It bit me today, I think the last time I encountered it was about 10 years ago --long enough that I became complacent.
+Here is something that you've likely run into if you have been programming for a long time. It falls into the category of 'exceptionally difficult to troubleshoot' and so you should always be aware (and reminded) of it. It bit me today, I think the last time I encountered it was about 10 years ago -- long enough that I became complacent.
 
 If you don't read any further, take this advice: do not copy any sort of formatted text into your code. This includes text that seems like it's not formatted but is presented in a document viewer (e.g. Word, PDF), web page, or in this case a collaboration tool like Microsoft Teams.
 
