@@ -24,7 +24,7 @@ Boo. That was anticlimactic. Pressing on though because it _still_ made no sense
 
 ![]({{ '/assets/images/SpidermanPointingCode.png' | relative_url }})
 
-Look as closely as you want, you will not see any differences. The times I've run into this before it was usually with either line break differences (a classic) or single/double quote differences copying out of MS Word. In both those cases there are _very subtle_ differences in fixed-width fonts that you can identify. Not so here.
+Look as closely as you want, you will not see any differences. The times I've run into this before it was usually with either line break differences (a classic) or single/double quote differences copying out of MS Word. In both those cases there are subtle differences that you can visually identify, particularly if you show all characters. Not so here.
 
 What happened was that copying out of MS Teams brought along with it two __Zero Width Space__ characters - one after the opening brace and one before the closing. Yes, not just a hard-to-see whitespace character, but one with _Zero Width_. Talk about an imposter.  
 
